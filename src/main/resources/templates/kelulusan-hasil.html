@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hasil Data Kelulusan</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>	
+    </head>
+    <body>
+    		<div   th:replace = "fragments/fragment :: header" ></div>
+	    <div class="row">
+	        <div align="center">
+	            <h2>Persentase Kelulusan</h2>
+	        </div>
+	    </div>
+        <div class="row">
+        		<div class="col-sm-2"></div>
+
+        		<div class="col-sm-6">
+	            <div class="row">
+	                <div class="col-sm-4">
+	                    <strong>Tahun</strong>
+	                </div>
+	                <div class="col-sm-8">
+	                    <label th:text="${tahun_masuk}"></label>
+	                </div>
+	            </div>
+            		<div class="row">
+                		<div class="col-sm-4">
+                    		<strong>Program Studi</strong>
+                		</div>
+                		<div class="col-sm-8">
+                    		<label th:text="${nama_prodi}"></label>
+                		</div>
+            		</div>
+            		<div class="row">
+                		<div class="col-sm-4">
+                    		<strong>Fakultas</strong>
+                		</div>
+                		<div class="col-sm-8">
+                    		<label th:text="${nama_fakultas}"></label>
+                		</div>
+            		</div>
+            		<div class="row">
+	                <div class="col-sm-4">
+	                    <strong>Universitas</strong>
+	                </div>
+	                <div class="col-sm-8">
+	                    <label th:text="${nama_univ}"></label>
+	                </div>
+            		</div>
+        		</div>
+        		<div class="col-sm-4">
+	            <div class="row">
+	                <h1 th:text="${persentaseLulus} == 'NaN' ? '0 %' : ${persentaseLulus}  + ' %'"></h1>
+	            </div>
+	            <div class="row">
+	                <h6 th:text="${mhsLulus} + ' dari ' + ${totalMhs} + ' Mahasiswa Telah Lulus'"></h6>
+	            </div>
+        		</div>
+		</div>
+    		
+       	
+    </body>
+</html>
+

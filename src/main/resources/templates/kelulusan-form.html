@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lihat Data Kelulusan</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>	
+    </head>
+    <body>
+    <div   th:replace = "fragments/fragment :: header" ></div>
+    <div class="row">
+    		<div class="col-sm-4"></div>
+	    <div class="col-sm-4">
+			<h4 align="center"> Persentase Kelulusan</h4>
+			<form class="form-horizontal" action="/kelulusan" method="get">
+			
+				<div class="form-group">
+					<label for="thn">Tahun Masuk</label>
+					<input type="text" class="form-control" size="50" name="thn"  placeholder="Input Tahun Masuk"/>
+				</div>
+						
+				<div class="form-group">
+					<label for="prodi">Id Program Studi</label>
+					<input type="text" class="form-control" size="50" name="prodi"  placeholder="Input ID Program Studi"/>
+				</div>
+				
+				<div class="pull-right">
+					<button class="btn btn-danger" type="submit">Lihat</button>
+				</div>
+			</form>
+		</div>
+	</div>
+    </body>
+</html>
+

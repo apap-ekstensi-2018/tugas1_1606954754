@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lihat Data Mahasiswa</title>
+        <!-- first jQuery -->
+		<script src="/jQuery-3.2.1/jquery-3.2.1.min.js"></script>
+		
+		<!-- then dataTables -->
+		<link href="/DataTables-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />   
+		<script src="/DataTables-1.10.16/js/jquery.dataTables.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    
+			
+		
+    		
+    </head>
+    
+	<body>
+		<div   th:replace = "fragments/fragment :: header" ></div>
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<h4 th:text="'Data Mahasiswa Program Studi '+${prodiObj.nama_prodi}+' Fakultas ' +${fakObj.nama_fakultas}+' '+${univObj.nama_univ} "></h4>
+		        <table id="mhsTable" class="display">
+					<thead class="thead-dark">
+			            <tr>
+			                <th>No</th>
+							<th>NPM</th>
+			                <th>Nama</th>
+			                <th>Program Studi</th>
+			                <th>Tahun Masuk</th>
+			                <th>Jalur Masuk</th>
+			            </tr>
+					</thead>
+			        
+			        <tbody>
+		                <tr th:each="mhs,iterationStatus: ${mhs}">
+		                		<td th:text="' ' + ${iterationStatus.count}"></td>
+		                		
+							<td>
+								<a th:href="'/mahasiswa?npm='+ ${mhs.npm}">
+									<div th:text="' ' + ${mhs.npm}"></div>
+								</a>
+							</td>
+							<td th:text="' ' + ${mhs.nama}"></td>
+							<td th:text="' ' + ${prodiObj.nama_prodi}"></td>
+							<td th:text="' ' + ${mhs.tahun_masuk}"></td>
+							<td th:text="' ' + ${mhs.jalur_masuk}"></td>
+		                </tr>
+		                
+		            </tbody>
+		            
+		    		</table>
+			</div>
+		</div>
+		 
+    	<script>
+	    		$(document).ready( function () {
+	    			$('#mhsTable').DataTable({
+			        "info":     false
+			    	});
+			} );	
+	</script>
+    </body>
+   	
+</html>

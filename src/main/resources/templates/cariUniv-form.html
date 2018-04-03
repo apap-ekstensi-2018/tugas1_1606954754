@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Cari Data Mahasiswa</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>	
+    </head>
+    <body>
+	    <div   th:replace = "fragments/fragment :: header" ></div>
+	    <div class="row">
+	    		<div class="col-sm-4"></div>
+		    <div class="col-sm-4">
+	            <h4 align="center"> Cari Mahasiswa</h4>
+	            <form class="form-horizontal" action="/mahasiswa/cari" method="get">
+			
+					<div class="form-group">
+						<label for="thn">Universitas</label>
+						<select class="form-control"   id="dropUniv" name="univ">
+							<option value="">Pilih Universitas</option>
+							<option th:each="univ : ${univ}" th:value="${univ.id}" th:text="${univ.nama_univ}"></option>
+						</select>
+					</div>
+					<div class="pull-right">
+						<button class="btn btn-danger" type="submit">Lihat</button>
+					</div>
+				</form>
+	        </div>
+		</div>
+    </body>
+</html>
+

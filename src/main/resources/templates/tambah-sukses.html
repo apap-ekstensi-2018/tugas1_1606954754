@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>Tambah Mahasiswa</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>	
+	</head>
+	<body>
+		<div   th:replace = "fragments/fragment :: header" ></div>
+		<h1>Sukses!</h1>
+		<h4 th:text="'Mahasiswa dengan NPM ' + ${mhs.npm}+' Berhasil Ditambahkan'"></h4>
+	
+	</body>
+</html>

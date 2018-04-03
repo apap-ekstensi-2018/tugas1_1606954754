@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Mahasiswa by NPM</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>	
+    </head>
+    <body>
+    		<div   th:replace = "fragments/fragment :: header" ></div>
+    			<div class="row">
+    				<div class="col-sm-3"></div>
+    				
+			    <div class="col-sm-6">
+					<h4 th:text="'Lihat Data Mahasiswa - '+${Mhs.npm}"></h4>
+						<table class="table table-striped">
+			                <tr>
+			                    <th>NPM</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.npm}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Nama</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.nama}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Tempat/Tanggal Lahir</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.tempat_lahir}+' '+${Mhs.tanggal_lahir}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Program Studi</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Prodi.nama_prodi}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Fakultas</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Fak.nama_fakultas}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Universitas</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Univ.nama_univ}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Jenis Kelamin</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.jenis_kelamin == '0'} ? 'Perempuan' : 'Laki-laki'"></td>
+			                </tr>
+			                <tr>
+			                    <th>Agama</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.agama}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Golongan Darah</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.golongan_darah}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Tanggal Masuk</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.tahun_masuk}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Jalur Masuk</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.jalur_masuk}"></td>
+			                </tr>
+			                <tr>
+			                    <th>Status</th>
+			                    <td style="width: 7%;"></td>
+			                    <td th:text="${Mhs.status}"></td>
+			                </tr>
+			            </table>
+			            <div class="pull-right">
+			            		<a th:href="'/mahasiswa/ubah/' + ${Mhs.npm}">
+								<button class="btn btn-danger" type="submit">Update</button>
+							</a>
+						</div>
+			        </div>
+			</div>
+       
+    
+    		
+       	
+    </body>
+</html>
+

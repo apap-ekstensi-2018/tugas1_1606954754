@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>SI Kemahasiswaan</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	    <script src="/js/jquery-3.3.1.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>	
+		
+	</head>
+	
+	<body>
+		<div   th:replace = "fragments/fragment :: header" >
+		</div>
+		<!-- Container (About Section) -->
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="container-fluid col-sm-4">
+			  <form class="form-inline" action="/mahasiswa" method="get">
+				    <strong>Silahkan Masukan NPM </strong>
+				    <div class="input-group">
+				    		<input type="text" class="form-control" size="50" name="npm" placeholder="Input NPM"/>
+				      	<div class="input-group-btn">
+				        		<button type="submit" class="btn btn-danger">Lihat</button>
+				      	</div>
+				    </div>
+			  </form>
+			</div>
+		</div>
+	</body>
+	
+</html>
+
+
+

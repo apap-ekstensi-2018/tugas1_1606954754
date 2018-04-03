@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Ubah Data Mahasiswa</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script src="/js/jquery-3.3.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>	
+
+</head>
+
+<body>
+	<div   th:replace = "fragments/fragment :: header" ></div>
+	
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<h3 align="center"> Ubah Mahasiswa </h3>
+	
+			<form class="form-horizontal" action="" method="POST" th:object="${Mhs}" th:action="@{/mahasiswa/ubah/{path}(path=${Mhs.npm})}">
+				<div >
+						<input hidden="" type="text" name="id" th:value="${Mhs.id}" th:field="*{id}" style="width: 450px;" />
+				</div>
+				<div class="form-group">
+					<label for="nama">Nama Lengkap</label> 
+					<input type="text" class="form-control" name="nama" th:field="*{nama}" th:value="${Mhs.nama}"/>
+				</div>
+				<div class="form-group">
+					<label for="tempat_lahir">Tempat Lahir</label> 
+					<input type="text" class="form-control" name="tempat_lahir" th:field="*{tempat_lahir}" th:value="${Mhs.tempat_lahir}"/>
+				</div>
+				<div class="form-group">
+					<label for="tanggal_lahir">Tanggal Lahir</label> 
+					<input type="text" class="form-control" name="tanggal_lahir" placeholder="yyyy/mm/dd" th:field="*{tanggal_lahir}" th:value="${Mhs.tanggal_lahir}"/>
+				</div>
+				<div class="form-group">
+					<label for="jenis_kelamin">Jenis Kelamin</label>
+					<select class="form-control" id="jenis_kelamin" th:field="*{jenis_kelamin}" th:value="${Mhs.jenis_kelamin}">
+					    <option value="0">Perempuan</option>
+					    <option value="1">Laki-Laki</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="agama">Agama</label> 
+					<select class="form-control" id="agama" th:field="*{agama}" th:value="${Mhs.agama}">
+					    <option value="Budha">Budha</option>
+					    <option value="Hindu">Hindu</option>
+					    <option value="Islam">Islam</option>
+					    <option value="Katolik" >Katolik</option>
+					    <option value="Konghucu">Konghucu</option>
+					    <option value="Protestan">Protestan</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="golongan_darah">Golongan Darah</label> 
+					<select class="form-control" id="golongan_darah" th:field="*{golongan_darah}" th:value="${Mhs.golongan_darah}">
+					    <option value="A+">A+</option>
+					    <option value="A-">A-</option>
+					    <option value="B+">B+</option>
+					    <option value="B-">B-</option>
+					    <option value="AB+">AB+</option>
+					    <option value="AB-">AB-</option>
+					    <option value="O+">O+</option>
+					    <option value="O-">O-</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="tahun_masuk">Tahun Masuk</label> 
+					<input type="text" class="form-control" name="tahun_masuk" th:field="*{tahun_masuk}" th:value="${Mhs.tahun_masuk}"/>
+				</div>
+				<div class="form-group">
+					<label for="jalur_masuk">Jalur Masuk</label> 
+					<select class="form-control" id="jalur_masuk" th:field="*{jalur_masuk}" th:value="${Mhs.jalur_masuk}">
+					    <option value="Olimpiade">Olimpiade</option>
+					    <option value="Reguler / SNMPTN">Reguler / SNMPTN</option>
+					    <option value="Paralel / PPKB">Paralel / PPKB</option>
+					    <option value="Bersama / SBMPTN">Bersama / SBMPTN</option>
+					    <option value="Mandiri">Mandiri</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="id_prodi">Id Program Studi</label> 
+					<input type="text" class="form-control" name="id_prodi" th:field="*{id_prodi}" th:value="${Mhs.id_prodi}" />
+				</div>
+				<div class="form-group">
+					<label for="status">Status</label> 
+					<select class="form-control" id="status" th:field="*{status}" th:value="${Mhs.status}">
+					    <option value="Aktif">Aktif</option>
+					    <option value="Drop Out">Drop Out</option>
+					    <option value="Lulus">Lulus</option>
+					</select>
+				</div>
+				
+		
+				<div class="pull-right">
+					<button class="btn btn-danger" type="submit" value="save">Simpan</button>
+				</div>
+			</form>
+			<br/>
+			<br/>
+			<br/>
+		</div>
+	</div>
+	
+</body>
+</html>
